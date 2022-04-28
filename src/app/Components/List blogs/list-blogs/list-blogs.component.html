@@ -1,0 +1,23 @@
+<div class="container">
+  <table class="table table-bordered text-center m-0" width="50%">
+    <tr>
+      <th>Title</th>
+      <th>Delete</th>
+      <th>Edit</th>
+      <!-- <th>Details</th> -->
+      
+    </tr>
+    <tr *ngFor="let b of blogs">
+      <td>{{b.title}}</td>
+      <td><button mat-flat-button color="warn" 
+        [swal]="{
+          title:'Confirmation',
+          text:'Are you sure that you want to delete the record?',
+          showCancelButton:true
+        }" (confirm)="delete(b.id)">Delete</button>
+      </td>
+      <td><a routerLink="/edit/{{b.id}}" mat-flat-button color="primary" class="me-3">Edit</a></td>
+      <!-- <td><a routerLink="/view/{{b.id}}" mat-flat-button color="primary" class="me-3">Details</a></td> -->
+    </tr>
+  </table>
+</div>

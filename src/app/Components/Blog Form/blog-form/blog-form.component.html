@@ -1,0 +1,36 @@
+<div class="container mt-3">
+    <!-- <h5 class="mt-3" >Add new blog</h5> -->
+    <form  [formGroup]="form" class="row" (submit)="saveChanges()">
+        <div class="col-lg-6">
+            <mat-form-field appearance="fill">
+                <mat-label>Title</mat-label>
+                <input #title formControlName="title" matInput>
+                <mat-error *ngIf="form.invalid">{{getErrorMsg()}}</mat-error>
+            </mat-form-field>
+
+        </div>
+        <div class="col-lg-6">
+            <mat-form-field appearance="fill">
+                <mat-label>Body</mat-label>
+                <input #body formControlName="body" matInput>
+                <mat-error *ngIf="form.invalid">{{getErrorMsgBody()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <!-- <div class="col-lg-6">
+            <mat-form-field appearance="fill">
+                <mat-label>Creation Date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="date" readonly  [disabled]="form.touched">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker" disabled="" ></mat-datepicker-toggle>
+                <mat-datepicker #picker [disabled]="form.valid"></mat-datepicker>
+            </mat-form-field>
+        </div> -->
+        <div>
+            <!-- <input type="submit" mat-flat-button color="primary" [disabled]="form.invalid" value="Save Changes" routerLink="/listblog"> -->
+            <!-- <button mat-flat-button color="primary" [disabled]="form.invalid">Save Changes</button> -->
+            <button class="btn btn-info mt-2" [disabled]="form.invalid">Save Changes</button>
+            <a mat-stroked-button routerLink="">Cancel</a>
+    
+        </div>
+    </form>
+</div>

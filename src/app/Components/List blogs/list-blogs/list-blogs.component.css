@@ -1,0 +1,14 @@
+table{
+    font-size: 1rem;
+}
+th,
+td {
+    transition: 0.1s all;
+    cursor: context-menu;
+    height: 50px;
+}
+
+th:hover,
+td:hover {
+    background-color: #d5d4d4;
+}
